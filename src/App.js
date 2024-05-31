@@ -4,6 +4,7 @@ import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
 import {useState} from "react";
 import {getCards} from "./components/api";
+import StatusBar from "./components/StatusBar";
 
 function App() {
     const [cards, setCards] = useState([]);
@@ -13,6 +14,7 @@ function App() {
           <FilterBar
               setCards={setCards}
           />
+            <StatusBar cards={cards} />
           <CardList
               cards={cards}
           />
