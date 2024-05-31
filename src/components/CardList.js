@@ -1,6 +1,7 @@
 // A component containing a list of Card objects
-const CardList = (props) => {
-    <div>Card list here</div>
-}
+import Card from "./Card";
 
+const CardList = (props) => {
+    return <Card />
+}
 export default CardList

@@ -14,16 +14,17 @@ const FilterBar = (props) => {
     ];
     const affiliations = [
         {key: 'All', value: 'all'},
-        {key: 'Villian', value: 'villian'},
+        {key: 'Villain', value: 'villain'},
         {key: 'Hero', value: 'hero'},
         {key: 'General', value: 'general'}
     ];
     const rarities = [
         {key: 'All', value: 0},
-        {key: 'Common', value: 1},
-        {key: 'Uncommon', value: 2},
-        {key: 'Rare', value: 3},
-        {key: 'Legendary', value: 1}
+        {key: 'Starter', value: 1},
+        {key: 'Common', value: 2},
+        {key: 'Uncommon', value: 3},
+        {key: 'Rare', value: 4},
+        {key: 'Legendary', value: 5}
     ];
 
     const onSetChange = (e) => {
