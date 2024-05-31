@@ -1,6 +1,6 @@
 import CardHeader from "./CardHeader";
 
-function Support({label, affiliation, faction, rarity, set, cost, subtype}) {
+function Support({name, affiliation_name, faction_name, rarity_name, set, cost, subtype, position}) {
     subtype = subtype !== undefined ? subtype : [];
     const renderedSubtypes = subtype.map((subtype, index) => {
         return <li key={index + 1}>{subtype.name}</li>;
@@ -10,17 +10,15 @@ function Support({label, affiliation, faction, rarity, set, cost, subtype}) {
 
     return <div className="card card--support">
         <CardHeader
-            label={label}
-            affiliation={affiliation}
-            faction={faction}
-            rarity={rarity}
+            label={name}
+            position={position}
         />
         <div className="card__content">
-            <p>{affiliation}/{faction}/{rarity}</p>
+            <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
             <ul>
                 {renderedSubtypes}
             </ul>
-            <p>Cost: {cost}.</p>
+            <p>Cost: {cost}</p>
             <p className='card__set'>{set}</p>
         </div>
     </div>

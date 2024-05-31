@@ -1,27 +1,22 @@
 import CardHeader from "./CardHeader";
 
-const Event = ({label, faction, affiliation, rarity, cost, set, subtype}) => {
-    subtype = subtype !== undefined ? subtype : [];
-    const renderedSubtypes = subtype.map((subtype, index) => {
-        return <li key={index + 1}>{subtype.name}</li>;
-    });
-
-    renderedSubtypes.unshift(<li key='0'>Event</li>);
+const Event = ({name, faction_name, affiliation_name, rarity_name, cost, set_name, type_name, position}) => {
 
     return <div className="card card--event">
         <CardHeader
-            label={label}
-            affiliation={affiliation}
-            faction={faction}
-            rarity={rarity}
+            label={name}
+            affiliation={affiliation_name}
+            faction={faction_name}
+            rarity={rarity_name}
+            position={position}
         />
         <div className="card__content">
-            <p>{affiliation}/{faction}/{rarity}</p>
+            <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
             <ul>
-                {renderedSubtypes}
+                <li key='0'>{type_name}</li>
             </ul>
             <p>Cost: {cost}.</p>
-            <p className='card__set'>{set}</p>
+            <p className='card__set'>{set_name}</p>
         </div>
     </div>
 }

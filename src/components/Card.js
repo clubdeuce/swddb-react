@@ -1,6 +1,6 @@
 import CardHeader from "./CardHeader";
 
-const Card = ({name, faction, affiliation, rarity, subtypes, type_name}) => {
+const Card = ({name, faction_name, affiliation_name, rarity_name, subtypes, type_name, set_name, position}) => {
     subtypes = subtypes !== undefined ? subtypes : [];
     const renderedSubtypes = subtypes.map((subtype, index) => {
         return <li key={index + 1}>{subtype.name}</li>;
@@ -11,13 +11,15 @@ const Card = ({name, faction, affiliation, rarity, subtypes, type_name}) => {
     return <div className="card">
         <CardHeader
             label={name}
-            affiliation={affiliation}
-            faction={faction}
-            rarity={rarity}
+            position={position}
         />
-        <ul className="card__keywords">
-            {renderedSubtypes}
-        </ul>
+        <div className="card__content">
+            <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
+            <ul className="card__keywords">
+                {renderedSubtypes}
+            </ul>
+            <p>{set_name}</p>
+        </div>
     </div>
 }
 

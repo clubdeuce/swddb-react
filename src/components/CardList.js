@@ -14,55 +14,25 @@ const CardList = ({cards}) => {
             case 'Character' :
                 component = <Character
                     key={index}
-                    typeName={card.type_name}
-                    label={card.name}
-                    affiliation={card.affiliation_name}
-                    faction={card.faction_name}
-                    rarity={card.rarity_name}
-                    set={card.set_name}
-                    points={card.points}
-                    health={card.health}
-                    subtype={card.subtypes}
+                    {...card}
                 />
                 break;
             case 'Support' :
-                console.log(card);
                 component = <Support
                     key={index}
-                    typeName={card.type_name}
-                    label={card.name}
-                    affiliation={card.affiliation_name}
-                    faction={card.faction_name}
-                    rarity={card.rarity_name}
-                    set={card.set_name}
-                    subtype={card.subtypes}
-                    cost={card.cost}
+                    {...card}
                 />
                 break;
             case 'Upgrade':
                 component = <Upgrade
                     key={index}
-                    label={card.name}
-                    typeName={card.type_name}
-                    affiliation={card.affiliation_name}
-                    faction={card.faction_name}
-                    rarity={card.rarity_name}
-                    set={card.set_name}
-                    subtype={card.subtypes}
-                    cost={card.cost}
+                    {...card}
                 />
                 break;
             case 'Event' :
                 component = <Event
                     key={index}
-                    typeName={card.type_name}
-                    label={card.name}
-                    affiliation={card.affiliation_name}
-                    faction={card.faction_name}
-                    rarity={card.rarity_name}
-                    set={card.set_name}
-                    subtype={card.subtypes}
-                    cost={card.cost}
+                    {...card}
                 />
                 break;
             case 'Battlefield' :

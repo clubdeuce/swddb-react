@@ -1,25 +1,37 @@
 import CardHeader from "./CardHeader";
 
-function Character({label, affiliation, faction, rarity, points, subtype, health, set, typeName}) {
-    const renderSubtypes = subtype.map((subtype, index) => {
-        return <li key={index}>{subtype.name}</li>;
-    })
+function Character({
+    name,
+    subtitle,
+    affiliation_name,
+    faction_name,
+    rarity_name,
+    type_name,
+    subtypes,
+    points,
+    health,
+    set_name,
+    position
+}) {
+    let subtype = subtypes !== undefined ? subtypes : [];
 
-    renderSubtypes.unshift(<li key='0'>{typeName}</li>)
+    const renderSubtypes = subtype.map((subtype, index) => {
+        return <li key={index + 1}>{subtype.name}</li>;
+    });
+
+    renderSubtypes.unshift(<li key='0'>{type_name}</li>);
 
     return <div className="card card--leader">
         <CardHeader
-            label={label}
-            affiliation={affiliation}
-            faction={faction}
-            rarity={rarity}
+            label={name}
+            position={position}
         />
         <div className="card__content">
-            <p>{affiliation}/{faction}/{rarity}</p>
+            <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
             <ul>{renderSubtypes}</ul>
             <p>Points: {points}</p>
             <p>Health: {health}</p>
-            <p>{set}</p>
+            <p>{set_name}</p>
         </div>
     </div>
 }

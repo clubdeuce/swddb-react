@@ -19,13 +19,28 @@
     }
 }
 
+.card header {
+    color: #282c34;
+    position: relative;
+}
+
 .card header .label {
     background-color: #ccc;
-    color: #282c34;
     margin: 0;
     padding: 5px 10px;
 }
 
+.card header .meta {
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .card__content {
     padding: 0 10px;
+}
+
+.card__content ul {
+    margin-left: 0;
+    padding-left: 1em;
 }
