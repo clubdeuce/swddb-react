@@ -2,24 +2,21 @@ import './App.css';
 import './components/Card.css';
 import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
-import {getCard} from "./components/api";
+import {useState} from "react";
+import {getCards} from "./components/api";
 
 function App() {
-    try {
-        getCard('01001').then(response => {
-            console.log(response);
-        });
-    } catch (error) {
-        console.error(error)
-    }
-
-  return (
+    const [cards, setCards] = useState([]);
+    return (
     <div className="App">
-      <header className="App-header">
-          <h2>Star Wars&trade; Destiny Card Viewer</h2>
-          <FilterBar />
-          <CardList />
-      </header>
+        <header className="App-header">
+          <FilterBar
+              setCards={setCards}
+          />
+          <CardList
+              cards={cards}
+          />
+        </header>
     </div>
   );
 }
