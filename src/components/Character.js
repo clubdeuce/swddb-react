@@ -28,8 +28,7 @@ function Character(props) {
 
     return <div className="card card--leader">
         <CardHeader
-            title={props.title}
-            subtitle={props.subtitle}
+            label={props.label}
             affiliation={props.affiliation}
             faction={props.faction}
             rarity={props.rarity}

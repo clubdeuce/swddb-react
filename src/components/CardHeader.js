@@ -1,13 +1,7 @@
-function cardHeader({title, subtitle, affiliation, faction, rarity}) {
-    let text = title;
-
-    if (subtitle.length >= 1) {
-        text += ' - ' + subtitle;
-    }
-
+function cardHeader({label, affiliation, faction, rarity}) {
     return <header className='card__header'>
-        <h3>{text}</h3>
-        <p>{affiliation} {faction} {rarity}</p>
+        <h3>{label}</h3>
+        <p>{affiliation}/{faction}/{rarity}</p>
     </header>
 }
 
