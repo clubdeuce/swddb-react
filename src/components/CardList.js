@@ -3,6 +3,7 @@ import Card from "./Card";
 import Character from "./Character";
 import Support from "./Support";
 import Event from "./Event";
+import Upgrade from "./Upgrade";
 
 const CardList = (props) => {
 
@@ -34,6 +35,16 @@ const CardList = (props) => {
             rarity='Starter'
             cost='0'
             set='Faltering Allegiances'
+            />
+
+        <Upgrade
+            label='Sith Warblade'
+            affiliation='Villain'
+            faction='Force'
+            rarity='Starter'
+            set='Faltering Allegiances'
+            cost='3'
+            subtype={['Weapon']}
             />
     </div>
 }
