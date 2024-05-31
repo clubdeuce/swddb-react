@@ -1,6 +1,7 @@
 import {useState} from "react";
+import {getSet} from "./api";
 
-const FilterBar = (props) => {
+const FilterBar = ({setCards}) => {
     const [cardSet, cardSetSet] = useState(0);
     const [rarity, setRarity] = useState(0);
     const [faction, setFaction] = useState('all');
@@ -28,6 +29,14 @@ const FilterBar = (props) => {
 
     const onSetChange = (e) => {
         cardSetSet(e.target.value);
+        try {
+            getSet(e.target.value).then(response => {
+                setCards(response.data);
+            });
+        }
+        catch(error) {
+
+        }
     }
 
     const onRarityChange = (e) => {
@@ -58,10 +67,9 @@ const FilterBar = (props) => {
         <label htmlFor="card-set">Set:
             <select id='card-set' className='card-set' value={cardSet} onChange={onSetChange}>
                 <option value="0">All</option>
-                <option value="1">Awakenings</option>
-                <option value="2">Spirit of Rebellion</option>
-                <option value="3">Empire at War</option>
-                <option value="4">Two-Player Game</option>
+                <option value="AW">Awakenings</option>
+                <option value="SOR">Spirit of Rebellion</option>
+                <option value="EAW">Empire at War</option>
             </select>
         </label>
 

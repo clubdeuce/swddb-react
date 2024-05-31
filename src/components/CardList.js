@@ -4,48 +4,81 @@ import Character from "./Character";
 import Support from "./Support";
 import Event from "./Event";
 import Upgrade from "./Upgrade";
+import Card from "./Card";
 
-const CardList = (props) => {
+const CardList = ({cards}) => {
+    const renderCards = cards.map((card, index) => {
+        let component = null;
+
+        switch (card.type_name) {
+            case 'Character' :
+                component = <Character
+                    key={index}
+                    typeName={card.type_name}
+                    label={card.name}
+                    affiliation={card.affiliation_name}
+                    faction={card.faction_name}
+                    rarity={card.rarity_name}
+                    set={card.set_name}
+                    points={card.points}
+                    health={card.health}
+                    subtype={card.subtypes}
+                />
+                break;
+            case 'Support' :
+                console.log(card);
+                component = <Support
+                    key={index}
+                    typeName={card.type_name}
+                    label={card.name}
+                    affiliation={card.affiliation_name}
+                    faction={card.faction_name}
+                    rarity={card.rarity_name}
+                    set={card.set_name}
+                    subtype={card.subtypes}
+                    cost={card.cost}
+                />
+                break;
+            case 'Upgrade':
+                component = <Upgrade
+                    key={index}
+                    label={card.name}
+                    typeName={card.type_name}
+                    affiliation={card.affiliation_name}
+                    faction={card.faction_name}
+                    rarity={card.rarity_name}
+                    set={card.set_name}
+                    subtype={card.subtypes}
+                    cost={card.cost}
+                />
+                break;
+            case 'Event' :
+                component = <Event
+                    key={index}
+                    typeName={card.type_name}
+                    label={card.name}
+                    affiliation={card.affiliation_name}
+                    faction={card.faction_name}
+                    rarity={card.rarity_name}
+                    set={card.set_name}
+                    subtype={card.subtypes}
+                    cost={card.cost}
+                />
+                break;
+            case 'Battlefield' :
+            case 'Downgrade' :
+            default :
+                component = <Card
+                    key={index}
+                    {...card}
+                />
+        }
+
+        return component;
+    });
 
     return <div className='cards'>
-        <Character
-            label='Ninth Sister - Brutal Empath'
-            affiliation='Villain'
-            faction='Force'
-            rarity='Starter'
-            set='Faltering Allegiances'
-            points='12/16'
-            health='12'
-            subtype={['Inquisitor']}
-        />
-        <Support
-            label='Painful Lessons'
-            affiliation='Villain'
-            faction='Force'
-            rarity='Starter'
-            set='Faltering Allegiances'
-            cost='0'
-            keywords={['Support']}
-        />
-
-        <Event
-            label='Peace is a Lie'
-            affiliation='Villain'
-            faction='Force'
-            rarity='Starter'
-            cost='0'
-            set='Faltering Allegiances'
-            />
-
-        <Upgrade
-            label='Sith Warblade'
-            affiliation='Villain'
-            faction='Force'
-            rarity='Starter'
-            set='Faltering Allegiances'
-            cost='3'
-            subtype={['Weapon']}
-            />
+        {renderCards}
     </div>
 }
 export default CardList
