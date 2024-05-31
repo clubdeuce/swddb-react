@@ -1,3 +1,8 @@
+# SWDDB
+
+An application to view Star Wars(TM) Destiny cards implemented with React. This application is strictly an exercise in
+building an application utilizing React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+_Star Wars is copyrighted by, and a registered trademark of, Lucasfilm Limited._
