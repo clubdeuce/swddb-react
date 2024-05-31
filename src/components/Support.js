@@ -9,8 +9,11 @@ function Support({label, affiliation, faction, rarity, set, cost}) {
             faction={faction}
             rarity={rarity}
         />
-        <p><strong>Support.</strong>&nbsp;Cost: {cost}.</p>
-        <p className='card__set'>{set}</p>
+        <div className="card__content">
+            <p>{affiliation}/{faction}/{rarity}</p>
+            <p><strong>Support.</strong>&nbsp;Cost: {cost}.</p>
+            <p className='card__set'>{set}</p>
+        </div>
     </div>
 }
 

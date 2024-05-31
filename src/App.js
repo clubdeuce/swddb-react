@@ -1,4 +1,5 @@
 import './App.css';
+import './components/Card.css';
 import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
 

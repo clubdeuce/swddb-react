@@ -1,7 +1,6 @@
-function cardHeader({label, affiliation, faction, rarity}) {
+function cardHeader({label}) {
     return <header className='card__header'>
-        <h3>{label}</h3>
-        <p>{affiliation}/{faction}/{rarity}</p>
+        <h3 className='label'>{label}</h3>
     </header>
 }
 

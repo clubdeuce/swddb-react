@@ -1,0 +1,16 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 90%;
+}
+
+@media (min-width: 800px) {
+    width: 80%;
+}
+
+@media (min-width: 1024px) {
+    width: 70%;
+}

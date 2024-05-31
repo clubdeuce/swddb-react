@@ -1,3 +1,31 @@
 .card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-basis: 100%;
+    margin: 20px 0;
     text-align: left;
+}
+
+@media screen and (min-width: 800px) {
+    .card {
+        margin: 20px;
+        flex-basis: calc(50% - 42px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        flex-basis: calc(33.3333333% - 42px);
+    }
+}
+
+.card header .label {
+    background-color: #ccc;
+    color: #282c34;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.card__content {
+    padding: 0 10px;
 }

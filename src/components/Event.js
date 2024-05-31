@@ -8,8 +8,11 @@ const Event = ({label, faction, affiliation, rarity, cost, set}) => {
             faction={faction}
             rarity={rarity}
         />
-        <p><strong>Event.</strong>&nbsp;Cost: {cost}.</p>
-        <p className='card__set'>{set}</p>
+        <div className="card__content">
+            <p>{affiliation}/{faction}/{rarity}</p>
+            <p><strong>Event.</strong>&nbsp;Cost: {cost}.</p>
+            <p className='card__set'>{set}</p>
+        </div>
     </div>
 }
 

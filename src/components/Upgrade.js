@@ -8,8 +8,11 @@ const Upgrade = ({label, faction, affiliation, subtype, rarity, cost, set}) => {
             faction={faction}
             rarity={rarity}
         />
-        <p><strong>Upgrade - {subtype.join(' - ')}.</strong>&nbsp;Cost: {cost}.</p>
-        <p className='card__set'>{set}</p>
+        <div className="card__content">
+            <p>{affiliation}/{faction}/{rarity}</p>
+            <p><strong>Upgrade - {subtype.join(' - ')}.</strong>&nbsp;Cost: {cost}.</p>
+            <p className='card__set'>{set}</p>
+        </div>
     </div>
 }
 

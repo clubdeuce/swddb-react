@@ -1,4 +1,5 @@
 // A component containing a list of Card objects
+import './CardList.css';
 import Character from "./Character";
 import Support from "./Support";
 import Event from "./Event";
@@ -15,7 +16,7 @@ const CardList = (props) => {
             set='Faltering Allegiances'
             points='12/16'
             health='12'
-            keywords={['Character', 'Inquisitor']}
+            subtype={['Inquisitor']}
         />
         <Support
             label='Painful Lessons'
