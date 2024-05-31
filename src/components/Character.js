@@ -1,16 +1,6 @@
+import CardHeader from "./CardHeader";
+
 function Character(props) {
-    const cardHeader = () => {
-        let text = props.title;
-
-        if (props.subtitle.length >= 1) {
-            text += ' - ' + props.subtitle;
-        }
-
-        return <header className='card__header'>
-            <h3>{text}</h3>
-        </header>
-    }
-
     const renderKeywords = () => {
         let keywords = [];
 
@@ -24,7 +14,7 @@ function Character(props) {
 
     const renderCardProperties = () => {
         let properties = renderKeywords() + '.';
-        
+
         if(undefined !== props.points && props.points.length >= 1) {
             properties += ' Points: ' + props.points;
         }
@@ -37,8 +27,13 @@ function Character(props) {
     }
 
     return <div className="card card--leader">
-        {cardHeader()}
-        <p>{props.affiliation} {props.faction} {props.rarity}</p>
+        <CardHeader
+            title={props.title}
+            subtitle={props.subtitle}
+            affiliation={props.affiliation}
+            faction={props.faction}
+            rarity={props.rarity}
+        />
         <p>{renderCardProperties()}</p>
     </div>
 }
