@@ -1,11 +1,7 @@
-import {useState} from "react";
 import {getSet} from "./api";
 
-const FilterBar = ({setCards}) => {
-    const [cardSet, cardSetSet] = useState(0);
-    const [rarity, setRarity] = useState(0);
-    const [faction, setFaction] = useState('all');
-    const [affiliation, setAffiliation] = useState('all');
+const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction, affiliation, setAffiliation}) => {
+
     const factions = [
         {key: 'Command', value: 'red'},
         {key: 'Force', value: 'blue'},
@@ -28,15 +24,7 @@ const FilterBar = ({setCards}) => {
     ];
 
     const onSetChange = (e) => {
-        cardSetSet(e.target.value);
-        try {
-            getSet(e.target.value).then(response => {
-                setCards(response.data);
-            });
-        }
-        catch(error) {
-
-        }
+        setCardSet(e.target.value);
     }
 
     const onRarityChange = (e) => {
