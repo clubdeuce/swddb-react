@@ -1,5 +1,4 @@
 import {useState} from "react";
-import Card from "./Card";
 
 const FilterBar = (props) => {
     const [cardSet, cardSetSet] = useState(0);

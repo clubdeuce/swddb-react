@@ -1,5 +1,4 @@
 // A component containing a list of Card objects
-import Card from "./Card";
 import Character from "./Character";
 import Support from "./Support";
 import Event from "./Event";
