@@ -2,6 +2,7 @@
 import Card from "./Card";
 import Character from "./Character";
 import Support from "./Support";
+import Event from "./Event";
 
 const CardList = (props) => {
 
@@ -25,6 +26,15 @@ const CardList = (props) => {
             cost='0'
             keywords={['Support']}
         />
+
+        <Event
+            label='Peace is a Lie'
+            affiliation='Villain'
+            faction='Force'
+            rarity='Starter'
+            cost='0'
+            set='Faltering Allegiances'
+            />
     </div>
 }
 export default CardList
