@@ -1,6 +1,6 @@
 import CardHeader from "./CardHeader";
 
-function Character({label, affiliation, faction, rarity, points, subtype, health}) {
+function Character({label, affiliation, faction, rarity, points, subtype, health, set}) {
     return <div className="card card--leader">
         <CardHeader
             label={label}
@@ -10,7 +10,10 @@ function Character({label, affiliation, faction, rarity, points, subtype, health
         />
         <div className="card__content">
             <p>{affiliation}/{faction}/{rarity}</p>
-            <p><strong>Character - {subtype.join(' - ')}.</strong>&nbsp;Points: {points}.&nbsp;Health: {health}</p>
+            <p><strong>Character - {subtype.join(' - ')}</strong></p>
+            <p>Points: {points}</p>
+            <p>Health: {health}</p>
+            <p>{set}</p>
         </div>
     </div>
 }
