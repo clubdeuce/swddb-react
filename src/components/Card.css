@@ -36,11 +36,27 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.card__content {
+.card__content-wrap {
     padding: 0 10px;
 }
+@media screen and (min-width: 560px) {
+    .card__content-wrap {
+        display: flex;
+        justify-content: space-between;
+    }
 
+    .card__content,
+    .card__image-wrap {
+        flex-basis: 47%;
+    }
+}
 .card__content ul {
     margin-left: 0;
     padding-left: 1em;
+}
+
+.card__image-wrap img {
+    height: auto;
+    margin: 10px 0;
+    width: 100%;
 }

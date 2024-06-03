@@ -11,7 +11,8 @@ function Character({
     points,
     health,
     set_name,
-    position
+    position,
+    imagesrc
 }) {
     let subtype = subtypes !== undefined ? subtypes : [];
 
@@ -26,12 +27,17 @@ function Character({
             label={name}
             position={position}
         />
-        <div className="card__content">
-            <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
-            <ul>{renderSubtypes}</ul>
-            <p>Points: {points}</p>
-            <p>Health: {health}</p>
-            <p>{set_name}</p>
+        <div className="card__content-wrap">
+            <div className="card__content">
+                <p>{affiliation_name}/{faction_name}/{rarity_name}</p>
+                <ul>{renderSubtypes}</ul>
+                <p>Points: {points}</p>
+                <p>Health: {health}</p>
+                <p>{set_name}</p>
+            </div>
+            <div className="card__image-wrap">
+                <img src={imagesrc} alt={`${name} - ${subtitle} `} />
+            </div>
         </div>
     </div>
 }
