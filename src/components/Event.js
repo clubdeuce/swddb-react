@@ -15,7 +15,7 @@ const Event = ({name, faction_name, affiliation_name, rarity_name, cost, set_nam
             <ul>
                 <li key='0'>{type_name}</li>
             </ul>
-            <p>Cost: {cost}.</p>
+            <p>Cost: {cost}</p>
             <p className='card__set'>{set_name}</p>
         </div>
     </div>

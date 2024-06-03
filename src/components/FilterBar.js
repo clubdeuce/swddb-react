@@ -6,6 +6,7 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
     const [sets, setSets] = useState([]);
 
     const factions = [
+        {key: 'All', value: 'All'},
         {key: 'Command', value: 'red'},
         {key: 'Force', value: 'blue'},
         {key: 'Rogue', value: 'yellow'},
@@ -15,15 +16,15 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
         {key: 'All', value: 'all'},
         {key: 'Villain', value: 'villain'},
         {key: 'Hero', value: 'hero'},
-        {key: 'General', value: 'general'}
+        {key: 'Neutral', value: 'neutral'}
     ];
     const rarities = [
-        {key: 'All', value: 0},
-        {key: 'Starter', value: 1},
-        {key: 'Common', value: 2},
-        {key: 'Uncommon', value: 3},
-        {key: 'Rare', value: 4},
-        {key: 'Legendary', value: 5}
+        {key: 'All', value: 'all'},
+        {key: 'Starter', value: 'S'},
+        {key: 'Common', value: 'C'},
+        {key: 'Uncommon', value: 'U'},
+        {key: 'Rare', value: 'R'},
+        {key: 'Legendary', value: "L"}
     ];
 
     const onRarityChange = (e) => {
@@ -58,7 +59,6 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
 
         <label htmlFor="faction">Faction:
             <select id='faction' value={faction} onChange={onFactionChange}>
-                <option value="all">All</option>
                 {renderedFactions}
             </select>
         </label>

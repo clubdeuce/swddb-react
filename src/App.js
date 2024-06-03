@@ -3,7 +3,7 @@ import './components/Card.css';
 import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
 import {useEffect, useState} from "react";
-import {find, getCard, getCards, getSet, getSets} from "./components/api";
+import {find, getCards, getSet, getSets} from "./components/api";
 import StatusBar from "./components/StatusBar";
 
 function App() {
@@ -14,14 +14,19 @@ function App() {
     const [affiliation, setAffiliation] = useState('all');
 
     useEffect(() => {
-        try {
-            getCards().then(result => {
-                console.log(result);
-                setCards(result.data);
-            });
-        } catch (error) {
+        async function fetchData() {
+            let result = [];
 
+            try {
+                result = find(cardSet, faction, affiliation, rarity)
+            } catch (error) {
+
+            }
+            return result;
         }
+        fetchData().then((result) => {
+            setCards(result.data);
+        });
     }, [cardSet, rarity, faction, affiliation]);
 
     return (

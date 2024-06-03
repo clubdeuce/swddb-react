@@ -46,28 +46,24 @@ const find = (setId = 'all', faction = 'all', affiliation = 'all', rarity = 'all
     console.log(setId !== 'all');
 
     if (setId !== 'all') {
-        queryVars.push('s:AW');
-        console.log(queryVars);
+        queryVars.push(`s:${setId}`);
     }
 
     if (faction !== 'all') {
         queryVars.push(`f:${faction}`);
-        console.log(queryVars);
     }
 
     if (affiliation !== 'all') {
         queryVars.push(`a:${affiliation}`);
-        console.log(queryVars);
     }
 
     if (rarity !== 'all') {
-        queryVars.push(`u:${rarity}`);
-        console.log(queryVars);
+        queryVars.push(`y:${rarity}`);
     }
 
     if (queryVars.length) {
-        //return axios.get(`${baseUrl}/public/find/q=${encodeURI(queryVars.join('+'))}`)
-        return axios.get(`${baseUrl}/public/sets/q={s:AW,t:character}`)
+        console.log(queryVars);
+        return axios.get(`${baseUrl}/public/find?q=${encodeURI(queryVars.join('+'))}`)
     }
 
     return getCards();
