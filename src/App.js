@@ -2,16 +2,27 @@ import './App.css';
 import './components/Card.css';
 import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
-import {useState} from "react";
-import {getCards} from "./components/api";
+import {useEffect, useState} from "react";
+import {find, getCard, getCards, getSet, getSets} from "./components/api";
 import StatusBar from "./components/StatusBar";
 
 function App() {
     const [cards, setCards] = useState([]);
-    const [cardSet, setCardSet] = useState(0);
-    const [rarity, setRarity] = useState(0);
+    const [cardSet, setCardSet] = useState('all');
+    const [rarity, setRarity] = useState('all');
     const [faction, setFaction] = useState('all');
     const [affiliation, setAffiliation] = useState('all');
+
+    useEffect(() => {
+        try {
+            getCards().then(result => {
+                console.log(result);
+                setCards(result.data);
+            });
+        } catch (error) {
+
+        }
+    }, [cardSet, rarity, faction, affiliation]);
 
     return (
     <div className="App">
@@ -25,6 +36,7 @@ function App() {
               setFaction={setFaction}
               affiliation={affiliation}
               setAffiliation={setAffiliation}
+              getSets={getSets}
           />
             <StatusBar cards={cards} />
           <CardList

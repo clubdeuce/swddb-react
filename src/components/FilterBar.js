@@ -1,6 +1,9 @@
-import {getSet} from "./api";
+import {useState} from "react";
+import SetSelect from "./SetSelect";
 
-const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction, affiliation, setAffiliation}) => {
+const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction, affiliation, setAffiliation, getSets}) => {
+
+    const [sets, setSets] = useState([]);
 
     const factions = [
         {key: 'Command', value: 'red'},
@@ -22,10 +25,6 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
         {key: 'Rare', value: 4},
         {key: 'Legendary', value: 5}
     ];
-
-    const onSetChange = (e) => {
-        setCardSet(e.target.value);
-    }
 
     const onRarityChange = (e) => {
         setRarity(e.target.value);
@@ -52,14 +51,10 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
     })
 
     return <div className="filter-bar">
-        <label htmlFor="card-set">Set:
-            <select id='card-set' className='card-set' value={cardSet} onChange={onSetChange}>
-                <option value="0">All</option>
-                <option value="AW">Awakenings</option>
-                <option value="SOR">Spirit of Rebellion</option>
-                <option value="EAW">Empire at War</option>
-            </select>
-        </label>
+        <SetSelect
+            cardSet={cardSet}
+            setCardSet={setCardSet}
+        />
 
         <label htmlFor="faction">Faction:
             <select id='faction' value={faction} onChange={onFactionChange}>
