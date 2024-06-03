@@ -3,7 +3,7 @@ import './components/Card.css';
 import CardList from "./components/CardList";
 import FilterBar from "./components/FilterBar";
 import {useEffect, useState} from "react";
-import {find, getCards, getSet, getSets} from "./components/api";
+import {find, getSets} from "./components/api";
 import StatusBar from "./components/StatusBar";
 
 function App() {

@@ -1,9 +1,6 @@
-import {useState} from "react";
 import SetSelect from "./SetSelect";
 
 const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction, affiliation, setAffiliation, getSets}) => {
-
-    const [sets, setSets] = useState([]);
 
     const factions = [
         {key: 'All', value: 'All'},
