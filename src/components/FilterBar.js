@@ -7,7 +7,7 @@ const FilterBar = ({cardSet, setCardSet, rarity, setRarity, faction, setFaction,
         {key: 'Command', value: 'red'},
         {key: 'Force', value: 'blue'},
         {key: 'Rogue', value: 'yellow'},
-        {key: 'General', value: 'grey'},
+        {key: 'Neutral', value: 'gray'},
     ];
     const affiliations = [
         {key: 'All', value: 'all'},
